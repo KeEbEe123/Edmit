@@ -46,6 +46,7 @@ import { Badge } from "../../components/ui/badge";
 import { useIsMobile } from "../../hooks/use-mobile";
 import { useToast } from "../../components/ui/use-toast";
 import BlockedStudentsSection from "../../components/admin/BlockedStudentsSection";
+import StudentIssuesSection from "../../components/admin/StudentIssuesSection";
 import {
   Table,
   TableBody,
@@ -774,6 +775,12 @@ const AdminDashboard = () => {
           >
             Blocked Students
           </TabsTrigger>
+          <TabsTrigger
+            value="issues"
+            className={isMobile ? "min-w-[120px]" : ""}
+          >
+            Student Issues
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="overview">
@@ -1344,6 +1351,10 @@ const AdminDashboard = () => {
 
         <TabsContent value="blocked">
           <BlockedStudentsSection />
+        </TabsContent>
+
+        <TabsContent value="issues">
+          <StudentIssuesSection />
         </TabsContent>
       </Tabs>
     </div>
