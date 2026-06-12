@@ -40,10 +40,12 @@ import {
   UserPlus,
   PauseCircle,
   Upload,
+  UserX,
 } from "lucide-react";
 import { Badge } from "../../components/ui/badge";
 import { useIsMobile } from "../../hooks/use-mobile";
 import { useToast } from "../../components/ui/use-toast";
+import BlockedStudentsSection from "../../components/admin/BlockedStudentsSection";
 import {
   Table,
   TableBody,
@@ -766,6 +768,12 @@ const AdminDashboard = () => {
           >
             Detailed View
           </TabsTrigger>
+          <TabsTrigger
+            value="blocked"
+            className={isMobile ? "min-w-[120px]" : ""}
+          >
+            Blocked Students
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="overview">
@@ -1332,6 +1340,10 @@ const AdminDashboard = () => {
               )}
             </CardContent>
           </Card>
+        </TabsContent>
+
+        <TabsContent value="blocked">
+          <BlockedStudentsSection />
         </TabsContent>
       </Tabs>
     </div>
